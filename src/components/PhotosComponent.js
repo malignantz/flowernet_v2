@@ -3,6 +3,7 @@ import { Media, MediaOverlay, CardTitle, DialogContainer } from "react-md";
 
 import PhotoGridComponent from "./PhotoGridComponent";
 import TabsControlComponent from "./TabsControlComponent";
+import "./PhotosComponent.css";
 
 //import "./../img-2.js";
 
@@ -68,11 +69,13 @@ class PhotosComponent extends Component {
           aria-label="full resolution"
           autopadContent={false}
         >
-          <img
-            src={this.state.image.url}
-            alt="full screen view"
-            id="full_img"
-          />
+          <div className="imageHolder">
+            <img
+              src={this.state.image.url}
+              alt="full screen view"
+              id="full_img"
+            />
+          </div>
         </DialogContainer>
       </div>
     );

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./PhotoGridComponent.css";
+import { Grid, Cell } from "react-md";
 
 class PhotoGridComponent extends Component {
   render() {
@@ -18,17 +19,21 @@ class PhotoGridComponent extends Component {
     //console.log(imgs);
     return (
       <div className="grid_container">
-        {imgs.map((photo, i) => (
-          <img
-            src={photo.url}
-            alt="crashpad"
-            className="flex_img"
-            key={"" + i + photo.url}
-            onClick={() => {
-              this.props.handleImageSelect(photo);
-            }}
-          />
-        ))}
+        <Grid>
+          {imgs.map((photo, i) => (
+            <Cell size={6}>
+              <img
+                src={photo.url}
+                alt="crashpad"
+                className="flex_img"
+                key={"" + i + photo.url}
+                onClick={() => {
+                  this.props.handleImageSelect(photo);
+                }}
+              />
+            </Cell>
+          ))}
+        </Grid>
       </div>
     );
   }
