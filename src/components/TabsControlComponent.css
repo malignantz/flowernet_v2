@@ -1,0 +1,11 @@
+.pad_selected {
+  background-color: rgb(238, 230, 242);
+}
+
+div.tile {
+  margin: 5px;
+}
+
+div.md-tile-content {
+  font-size: 2em;
+}
