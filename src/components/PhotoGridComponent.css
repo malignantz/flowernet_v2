@@ -1,4 +1,4 @@
-section {
+div.grid_container {
   display: flex;
   flex-wrap: wrap;
 }
@@ -6,17 +6,15 @@ section::after {
   content: "";
   flex-grow: 999999999;
 }
-div.imageHolder {
+div.imageHolder3 {
   margin: 2px;
   background-color: violet;
   position: relative;
 }
-i {
-  display: block;
-}
-img {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  vertical-align: bottom;
+
+img.flex_img {
+  height: 200px;
+  flex-grow: 1;
+  object-fit: cover;
+  margin: 2px;
 }

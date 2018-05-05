@@ -13,9 +13,10 @@ class PhotoGridComponent extends Component {
       const [url, width, height] = img;
       return { url: "assets/dsf/" + url, width, height };
     });
+    imgs = imgs.concat(imgs.slice(0));
     console.log(imgs);
     return (
-      <section>
+      <div className="grid_container">
         {imgs.map((photo, i) => (
           <div
             key={"" + i + photo.height}
@@ -25,15 +26,10 @@ class PhotoGridComponent extends Component {
               flexGrow: `${photo.width * 200 / photo.height}`
             }}
           >
-            <i
-              style={{
-                paddingBottom: `${photo.height / photo.width * 100}%`
-              }}
-            />
-            <img src={photo.url} alt="crashpad" />
+            <img src={photo.url} alt="crashpad" className="flex_img" />
           </div>
         ))}
-      </section>
+      </div>
     );
   }
 }

@@ -27,7 +27,7 @@ class photoSliderComponent extends Component {
             >
               {images.map(imgURL => (
                 <div key={imgURL}>
-                  <img src={imgURL} />
+                  <img src={imgURL} className="photo_slider" />
                 </div>
               ))}
             </Carousel>
