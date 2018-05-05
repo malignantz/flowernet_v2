@@ -14,20 +14,20 @@ class PhotoGridComponent extends Component {
       return { url: "assets/dsf/" + url, width, height };
     });
     imgs = imgs.concat(imgs.slice(0));
-    console.log(imgs);
+    imgs = imgs.concat(imgs.slice(0));
+    //console.log(imgs);
     return (
       <div className="grid_container">
         {imgs.map((photo, i) => (
-          <div
-            key={"" + i + photo.height}
-            className="imageHolder"
-            style={{
-              width: `${photo.width * 200 / photo.height}px`,
-              flexGrow: `${photo.width * 200 / photo.height}`
+          <img
+            src={photo.url}
+            alt="crashpad"
+            className="flex_img"
+            key={"" + i + photo.url}
+            onClick={() => {
+              this.props.handleImageSelect(photo);
             }}
-          >
-            <img src={photo.url} alt="crashpad" className="flex_img" />
-          </div>
+          />
         ))}
       </div>
     );

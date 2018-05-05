@@ -1,12 +1,5 @@
 import React, { Component } from "react";
-import {
-  Media,
-  MediaOverlay,
-  CardTitle,
-  Dialog,
-  Toolbar,
-  Button
-} from "react-md";
+import { Media, MediaOverlay, CardTitle, DialogContainer } from "react-md";
 
 import PhotoGridComponent from "./PhotoGridComponent";
 import TabsControlComponent from "./TabsControlComponent";
@@ -28,7 +21,7 @@ class PhotosComponent extends Component {
         "Wild Flower",
         "Peace Lilly"
       ],
-      imgURL: ""
+      image: { url: "", height: 0, width: 0 }
     };
   }
 
@@ -36,22 +29,23 @@ class PhotosComponent extends Component {
     this.setState({ selected });
   }
 
-  handleImageSelect(URL) {
-    let fullURL = URL.split("")
-      .reverse()
-      .join("")
-      .replace(".", ".lluf_")
-      .split("")
-      .reverse()
-      .join("");
-    console.log(fullURL);
-    this.setState({
-      imgURL: fullURL
-    });
+  handleImageSelect(image) {
+    let addUnderScoreFullToImageURL = URL =>
+      URL.split("")
+        .reverse()
+        .join("")
+        .replace(".", ".lluf_")
+        .split("")
+        .reverse()
+        .join("");
+
+    //let fullURL = addUnderScoreFullToImageURL(URL);
+    //    console.log(fullURL);
+    this.setState(Object.assign({}, { image }));
   }
 
   hide() {
-    this.handleImageSelect("");
+    this.handleImageSelect({ url: "", height: 0, width: 0 });
   }
 
   render() {
@@ -64,8 +58,22 @@ class PhotosComponent extends Component {
         />
         <PhotoGridComponent
           images={["assets/dsf/pool400.jpg", "assets/dsf/clubhouse400.jpg"]}
-          handleImageSelect={url => this.handleImageSelect(url)}
+          handleImageSelect={img => this.handleImageSelect(img)}
         />
+        <DialogContainer
+          id="simple-list-dialog"
+          visible={!!this.state.image.url}
+          onHide={this.hide.bind(this)}
+          initialFocus="full_img"
+          aria-label="full resolution"
+          autopadContent={false}
+        >
+          <img
+            src={this.state.image.url}
+            alt="full screen view"
+            id="full_img"
+          />
+        </DialogContainer>
       </div>
     );
   }
