@@ -17,4 +17,5 @@ img.flex_img {
   flex-grow: 1;
   object-fit: cover;
   margin: 2px;
+  max-width: 100%;
 }

@@ -67,6 +67,7 @@ class PhotosComponent extends Component {
           initialFocus="full_img"
           aria-label="full resolution"
           autopadContent={false}
+          width="80%"
         >
           <img
             src={this.state.image.url}
