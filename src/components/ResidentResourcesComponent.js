@@ -15,7 +15,7 @@ class ResidentResourcesComponent extends Component {
                 style={{ border: "1px solid black" }}
                 onClick={() =>
                   window.open(
-                    "https://docs.google.com/forms/d/e/1FAIpQLSdmL1taoWmodmaEas5dzSH2tPi9hyQxdon5Js_ol_b9W8YV5A/viewform?usp=sf_link"
+                    "https://docs.google.com/forms/d/e/1FAIpQLSfUdtlt74S8F9XE4jlCWzy3aeLIt0h1-0yWbgBYfInW_pYiSQ/viewform?usp=sf_link"
                   )
                 }
               />

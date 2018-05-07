@@ -6,6 +6,7 @@ import HomeComponent from "./components/HomeComponent";
 import NavDrawerComponent from "./components/NavDrawerComponent";
 import PhotosComponent from "./components/PhotosComponent";
 import PhotoSliderComponent from "./components/PhotoSliderComponent";
+import AgreementComponent from "./components/AgreementComponent";
 
 import logo from "./logo.svg";
 import mdHome from "./icons/ic_home_black_24px.svg";
@@ -41,6 +42,11 @@ class App extends Component {
                   path="/Resident_Resources"
                   location={location}
                   component={ResidentResourcesComponent}
+                />
+                <Route
+                  path="/Agreement"
+                  location={location}
+                  component={AgreementComponent}
                 />
               </Switch>
             </NavDrawerComponent>
