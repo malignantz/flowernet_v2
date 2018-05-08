@@ -5,14 +5,11 @@ import { NavigationDrawer, Button, SVGIcon, FontIcon } from "react-md";
 import HomeComponent from "./components/HomeComponent";
 import NavDrawerComponent from "./components/NavDrawerComponent";
 import PhotosComponent from "./components/PhotosComponent";
-import PhotoSliderComponent from "./components/PhotoSliderComponent";
 import AgreementComponent from "./components/AgreementComponent";
-
-import logo from "./logo.svg";
-import mdHome from "./icons/ic_home_black_24px.svg";
-import "./App.css";
 import FAQComponent from "./components/FAQComponent";
 import ResidentResourcesComponent from "./components/ResidentResourcesComponent";
+
+import "./App.css";
 
 class App extends Component {
   render() {

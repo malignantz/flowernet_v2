@@ -1,0 +1,38 @@
+.agreement_content {
+  width: 90%;
+}
+
+.important_section {
+  background-color: yellow;
+}
+
+.section_title {
+  background-color: lightgoldenrodyellow;
+}
+
+.highlight_text span {
+  background-color: yellow;
+  font-weight: bold;
+  font-size: 1.1em;
+  border-radius: 3px;
+  padding: 3px;
+}
+
+.margin-card {
+  margin-top: 15px;
+}
+
+.divider {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.signBtn {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.pointCursor {
+  cursor: pointer;
+}
