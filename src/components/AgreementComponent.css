@@ -28,7 +28,13 @@
 }
 
 .signBtn {
-  text-align: center;
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.signBtn {
+  text-align: left;
   margin-top: 10px;
   margin-bottom: 0;
 }

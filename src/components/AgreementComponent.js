@@ -12,11 +12,13 @@ import {
   Button
 } from "react-md";
 import "./AgreementComponent.css";
+import ButtonComponent from "./ButtonComponent";
 
 class AgreementComponent extends Component {
   constructor(props) {
     super(props);
     this.handleCheck.bind(this);
+    this.button = React.createRef();
 
     this.state = {
       mail: false,
@@ -44,11 +46,19 @@ class AgreementComponent extends Component {
     });
   }
 
+  scrollToButton(ns) {
+    if (this.button.current) {
+      this.button.current.focus();
+    }
+  }
+
   handleCheck(name) {
     let newState = Object.assign({}, this.state);
     newState[name] = !newState[name];
-    console.log(newState);
-    this.setState(newState);
+    //console.log(Object.keys(newState), this.button);
+    // console.log("55" + this.button);
+
+    this.setState(newState, () => this.scrollToButton(newState));
   }
 
   render() {
@@ -351,21 +361,7 @@ class AgreementComponent extends Component {
             />
             <Divider className="divider" />
             {Object.keys(this.state).every(prop => this.state[prop]) ? (
-              <div className="signBtn">
-                <Button
-                  className="signBtn"
-                  raised
-                  primary
-                  onClick={() =>
-                    window.open(
-                      "https://docs.google.com/forms/d/e/1FAIpQLSdmL1taoWmodmaEas5dzSH2tPi9hyQxdon5Js_ol_b9W8YV5A/viewform",
-                      "_new"
-                    )
-                  }
-                >
-                  Sign agreement ->
-                </Button>{" "}
-              </div>
+              <ButtonComponent buttonRef={this.button} />
             ) : (
               <div>
                 <div className="highlight_text">
