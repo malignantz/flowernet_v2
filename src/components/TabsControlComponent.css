@@ -9,3 +9,8 @@ div.tile {
 div.md-tile-content {
   font-size: 2em;
 }
+
+.crashpad_select {
+  background-color: rgb(234, 248, 254);
+  border-radius: 5px;
+}

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { SelectField } from "react-md";
+import { SelectField, Divider } from "react-md";
 import "./TabsControlComponent.css";
 
 class TabsControlComponent extends Component {
@@ -12,9 +12,12 @@ class TabsControlComponent extends Component {
           id="select-field-1"
           label="Select Crashpad"
           placeholder={selected}
-          className="md-cell"
+          className="crashpad_select md-cell"
           menuItems={pads}
+          onChange={this.props.selectPad}
+          defaultValue={"Sunny Tulip"}
         />
+        <Divider />
       </div>
     );
   }

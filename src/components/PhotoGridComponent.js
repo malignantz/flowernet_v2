@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./PhotoGridComponent.css";
+import { Media } from "react-md";
 
 class PhotoGridComponent extends Component {
   render() {
@@ -19,15 +20,16 @@ class PhotoGridComponent extends Component {
     return (
       <div className="grid_container">
         {imgs.map((photo, i) => (
-          <img
-            src={photo.url}
-            alt="crashpad"
-            className="flex_img"
-            key={"" + i + photo.url}
-            onClick={() => {
-              this.props.handleImageSelect(photo);
-            }}
-          />
+          <Media aspectRatio="1-1" key={"" + i + photo.url}>
+            <img
+              src={photo.url}
+              alt="crashpad"
+              className="flex_img"
+              onClick={() => {
+                this.props.handleImageSelect(photo);
+              }}
+            />
+          </Media>
         ))}
       </div>
     );

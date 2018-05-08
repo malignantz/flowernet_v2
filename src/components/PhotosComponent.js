@@ -62,7 +62,7 @@ class PhotosComponent extends Component {
         />
         <DialogContainer
           id="simple-list-dialog"
-          visible={!!this.state.image.url}
+          visible={false}
           onHide={this.hide.bind(this)}
           initialFocus="full_img"
           aria-label="full resolution"
