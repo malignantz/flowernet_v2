@@ -6,8 +6,6 @@ import NavLink from "./NavLink";
 
 import navItems from "./../navItems";
 
-import { NavigationDrawerComponent } from "react-md/lib/NavigationDrawers/NavigationDrawer";
-
 class NavDrawerComponent extends Component {
   render() {
     this.navItems = navItems;

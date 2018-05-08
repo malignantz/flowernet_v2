@@ -4,6 +4,16 @@ import { Grid, Cell } from "react-md";
 // import { NavigationDrawer, Button, SVGIcon, FontIcon } from "react-md";
 
 class HomeComponent extends Component {
+  componentWillMount() {
+    let routes = ["agreement", "Resident_Resources", "photos", "FAQ"];
+    let query = this.props.location.search;
+    let route = query.replace("?", "");
+    let history = this.props.history;
+    if (query.includes("?") && routes.some(item => query.includes(item))) {
+      history.push(`/${route}`);
+    }
+  }
+
   render() {
     return (
       <div>

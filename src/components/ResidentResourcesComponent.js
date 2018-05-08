@@ -3,12 +3,13 @@ import { List, ListItem, FontIcon, Grid, Cell, Subheader } from "react-md";
 
 class ResidentResourcesComponent extends Component {
   render() {
+    let cellSize = 3;
     return (
       <div>
         <span>Resident Resources</span>
         <List>
           <Grid>
-            <Cell size={4}>
+            <Cell size={cellSize}>
               <ListItem
                 primaryText="PACKAGES"
                 secondaryText="Official Form"
@@ -20,18 +21,28 @@ class ResidentResourcesComponent extends Component {
                 }
               />
             </Cell>
-            <Cell size={4}>
+            <Cell size={cellSize}>
               <ListItem
                 primaryText="TRANSPORT"
                 secondaryText="SFO Shuttles"
                 style={{ border: "1px solid black" }}
+                disabled
               />
             </Cell>
-            <Cell size={4}>
+            <Cell size={cellSize}>
               <ListItem
                 primaryText="TECHNOLOGY"
                 secondaryText="TV, Internet, etc."
                 style={{ border: "1px solid black" }}
+                disabled
+              />
+            </Cell>
+            <Cell size={cellSize}>
+              <ListItem
+                primaryText="MORE COMING SOON"
+                secondaryText="We <3 suggestions!"
+                style={{ border: "1px solid black" }}
+                disabled
               />
             </Cell>
           </Grid>
