@@ -30,7 +30,7 @@ class AgreementComponent extends Component {
 
   typingEffect(str) {
     let time = 0;
-    let offset = 150;
+    let offset = 110;
     this.timeouts = [];
     this.setState({ instructions: "" }, () => {
       for (let char of str) {
@@ -67,7 +67,7 @@ class AgreementComponent extends Component {
         <div className="md-headline">
           <strong>Resident Agreement</strong>
         </div>
-        <Card className="md-block-centered" raise>
+        <Card raise>
           <CardTitle title="Mail and Packages" className="section_title" />
           <CardText>
             <div>
@@ -368,12 +368,12 @@ class AgreementComponent extends Component {
                   <span>{this.state.instructions}</span>
                   {this.state.instructions.includes("acknowledge") ? (
                     <div
-                      className="pointCursor signBtn"
+                      className="pointCursor joke"
                       onClick={() =>
                         this.typingEffect("smdh. read the contract...")
                       }
                     >
-                      [Click here to check all without reading.]
+                      Sign contract without reading ->
                     </div>
                   ) : null}
                 </div>

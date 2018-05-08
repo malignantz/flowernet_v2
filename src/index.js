@@ -6,7 +6,7 @@ import registerServiceWorker from "./registerServiceWorker";
 import { BrowserRouter as Router } from "react-router-dom";
 
 const rootElement = document.getElementById("root");
-const siteBase = "/flowernet_v2_beta";
+const siteBase = "/";
 
 ReactDOM.render(
   <Router basename={siteBase}>
