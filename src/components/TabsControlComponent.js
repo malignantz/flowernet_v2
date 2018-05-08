@@ -14,7 +14,7 @@ class TabsControlComponent extends Component {
           placeholder={selected}
           className="crashpad_select md-cell"
           menuItems={pads}
-          onChage={this.props.selectPad}
+          onChange={this.props.selectPad}
           defaultValue="Sunny Tulip"
         />
         <Divider />

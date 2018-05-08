@@ -19,3 +19,7 @@ img.flex_img {
   margin: 2px;
   max-width: 100%;
 }
+
+.invisible {
+  display: hidden;
+}
