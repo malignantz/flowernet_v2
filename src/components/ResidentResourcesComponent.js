@@ -1,11 +1,15 @@
 import React, { Component } from "react";
-import { List, ListItem, FontIcon, Grid, Cell, Subheader } from "react-md";
+
+import List from "react-md/lib/Lists/List";
+import ListItem from "react-md/lib/Lists/ListItem";
+import Grid from "react-md/lib/Grids/Grid";
+import Cell from "react-md/lib/Grids/Grid";
 
 class ResidentResourcesComponent extends Component {
   render() {
     let cellSize = 3;
     return (
-      <div>
+      <div style={{ textAlign: "center" }}>
         <span>Resident Resources</span>
         <List>
           <Grid>
@@ -23,18 +27,28 @@ class ResidentResourcesComponent extends Component {
             </Cell>
             <Cell size={cellSize}>
               <ListItem
-                primaryText="TRANSPORT"
-                secondaryText="SFO Shuttles"
+                primaryText="FITNESS CENTER"
+                secondaryText="Take the virtual tour"
+                onClick={() =>
+                  window.open(
+                    "https://my.matterport.com/show/?m=B7WGXWjXy5f",
+                    "_self"
+                  )
+                }
                 style={{ border: "1px solid black" }}
-                disabled
               />
             </Cell>
             <Cell size={cellSize}>
               <ListItem
-                primaryText="TECHNOLOGY"
-                secondaryText="TV, Internet, etc."
+                primaryText="POOL AND CLUBHOUSE"
+                secondaryText="Take the virtual tour"
+                onClick={() =>
+                  window.open(
+                    "https://my.matterport.com/show/?m=jFD9ZTdkqzQ",
+                    "_self"
+                  )
+                }
                 style={{ border: "1px solid black" }}
-                disabled
               />
             </Cell>
             <Cell size={cellSize}>

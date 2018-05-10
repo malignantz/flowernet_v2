@@ -6,14 +6,14 @@ section::after {
   content: "";
   flex-grow: 999999999;
 }
-div.imageHolder3 {
+div.imageHolder {
   margin: 2px;
   background-color: violet;
   position: relative;
 }
 
 img.flex_img {
-  height: 200px;
+  height: 230px;
   flex-grow: 1;
   object-fit: cover;
   margin: 2px;

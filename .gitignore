@@ -8,7 +8,8 @@
 
 # production
 /build
-
+/images
+/public/assets
 # misc
 .DS_Store
 .env.local

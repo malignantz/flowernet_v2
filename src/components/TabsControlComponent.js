@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import { SelectField, Divider } from "react-md";
+import SelectField from "react-md/lib/SelectFields/SelectField";
+import Divider from "react-md/lib/Dividers/Divider";
+
 import "./TabsControlComponent.css";
 
 class TabsControlComponent extends Component {

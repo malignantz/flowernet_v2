@@ -1,16 +1,11 @@
 import React, { Component } from "react";
-import {
-  Grid,
-  Cell,
-  List,
-  ListItem,
-  Card,
-  CardTitle,
-  CardText,
-  SelectionControl,
-  Divider,
-  Button
-} from "react-md";
+
+import Card from "react-md/lib/Cards/Card";
+import CardTitle from "react-md/lib/Cards/CardTitle";
+import CardText from "react-md/lib/Cards/CardText";
+import SelectionControl from "react-md/lib/SelectionControls/SelectionControl";
+import Divider from "react-md/lib/Dividers/Divider";
+
 import "./AgreementComponent.css";
 import ButtonComponent from "./ButtonComponent";
 
@@ -24,7 +19,8 @@ class AgreementComponent extends Component {
       mail: false,
       deposit: false,
       tldr: false,
-      instructions: "Check ALL bokes to acknowledge terms"
+      instructions: "Check ALL boxes to acknowledge terms.",
+      dangerText: "You must check all boxes to continue"
     };
   }
 
@@ -53,8 +49,17 @@ class AgreementComponent extends Component {
   }
 
   handleCheck(name) {
+    const NUM_CHK_BOX = 3;
+    let uncheck = this.state[name];
+    let val = uncheck ? -1 : 1;
+
+    let rem = Object.keys(this.state).filter(key => !this.state[key]).length;
+
     let newState = Object.assign({}, this.state);
     newState[name] = !newState[name];
+    newState.dangerText = `${rem - val} remaining checkbox${
+      rem - 1 > 1 ? "es" : ""
+    }`;
     //console.log(Object.keys(newState), this.button);
     // console.log("55" + this.button);
 
@@ -366,6 +371,7 @@ class AgreementComponent extends Component {
               <div>
                 <div className="highlight_text">
                   <span>{this.state.instructions}</span>
+                  <div className="dangerText">{this.state.dangerText}</div>
                   {this.state.instructions.includes("acknowledge") ? (
                     <div
                       className="pointCursor joke"

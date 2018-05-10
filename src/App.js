@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { NavigationDrawer, Button, SVGIcon, FontIcon } from "react-md";
+import { Route, Switch } from "react-router-dom";
 
 import HomeComponent from "./components/HomeComponent";
 import NavDrawerComponent from "./components/NavDrawerComponent";

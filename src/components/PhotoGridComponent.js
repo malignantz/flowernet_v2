@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import "./PhotoGridComponent.css";
+//import LazyLoad from "react-lazy-load";
+import Gallery from "react-photo-gallery";
+import Lightbox from "react-images";
 
 class PhotoGridComponent extends Component {
   constructor(props) {
@@ -35,55 +38,51 @@ class PhotoGridComponent extends Component {
       WF: [],
       PL: []
     };
-    this.state = {
-      doneLoading: false
-    };
-    this.handleImageLoaded = this.handleImageLoaded.bind(this);
-    this.loadedImages = [];
+    let nameToUrl = (pad, name) => `assets/${pad}/web_${pad}_${name}_.jpg`;
+    this.imgs = this.photos.ST.map(nameToUrl.bind(null, "ST"))
+      .concat(this.photos.ALL.map(nameToUrl.bind(null, "ALL")))
+      .map(img => Object.assign({ src: img, width: 1, height: 1 }));
+    this.state = { currentImage: 0, lightboxIsOpen: false };
+    this.closeLightbox = this.closeLightbox.bind(this);
+    this.openLightbox = this.openLightbox.bind(this);
+    this.gotoNext = this.gotoNext.bind(this);
+    this.gotoPrevious = this.gotoPrevious.bind(this);
   }
-
-  handleImageLoaded(e) {
-    this.loadedImages.push(e);
-    console.log(this.loadedImages.length);
-    const TOTAL_IMGS = Object.keys(this.photos).reduce(
-      (total, cat) => total + this.photos[cat].length,
-      0
-    );
-    console.log(`${this.loadedImages.length}/${TOTAL_IMGS}`);
-    if (TOTAL_IMGS === this.loadedImages.length) {
-      this.setState({ doneLoading: true });
-    }
+  openLightbox(event, obj) {
+    this.setState({
+      currentImage: obj.index,
+      lightboxIsOpen: true
+    });
   }
-
+  closeLightbox() {
+    this.setState({
+      currentImage: 0,
+      lightboxIsOpen: false
+    });
+  }
+  gotoPrevious() {
+    this.setState({
+      currentImage: this.state.currentImage - 1
+    });
+  }
+  gotoNext() {
+    this.setState({
+      currentImage: this.state.currentImage + 1
+    });
+  }
   render() {
-    let nameToUrl = (pad, name) => `assets/${pad}/${pad}_${name}.jpg`;
-
-    let imgs = this.photos.ST.map(nameToUrl.bind(null, "ST")).concat(
-      this.photos.ALL.map(nameToUrl.bind(null, "ALL"))
-    );
-
-    //imgs = imgs.concat(imgs.slice(0));
-    //imgs = imgs.concat(imgs.slice(0));
-    //console.log(imgs);
-
+    console.log(this.imgs);
     return (
-      <div
-        className={`grid_container ${
-          this.state.doneLoading ? "grid_container" : "grid_container invisible"
-        }`}
-      >
-        {imgs.map((photo, i) => (
-          <img
-            src={photo}
-            alt="crashpad"
-            className="flex_img"
-            onLoad={this.handleImageLoaded}
-            key={"" + i + photo}
-            onClick={() => {
-              this.props.handleImageSelect(photo);
-            }}
-          />
-        ))}
+      <div>
+        <Gallery photos={this.imgs} onClick={this.openLightbox} />
+        <Lightbox
+          images={this.imgs}
+          onClose={this.closeLightbox}
+          onClickPrev={this.gotoPrevious}
+          onClickNext={this.gotoNext}
+          currentImage={this.state.currentImage}
+          isOpen={this.state.lightboxIsOpen}
+        />
       </div>
     );
   }

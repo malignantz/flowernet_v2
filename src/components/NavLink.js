@@ -1,6 +1,8 @@
 import React from "react";
 import { Link as RouterLink, Route } from "react-router-dom";
-import { FontIcon, ListItem } from "react-md";
+
+import FontIcon from "react-md/lib/FontIcons/FontIcon";
+import ListItem from "react-md/lib/Lists/ListItem";
 
 const NavLink = ({ label, to, exact, icon }) => (
   <Route path={to} exact={exact}>

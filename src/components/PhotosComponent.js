@@ -1,12 +1,9 @@
 import React, { Component } from "react";
-import { Media, MediaOverlay, CardTitle, DialogContainer } from "react-md";
 
 import PhotoGridComponent from "./PhotoGridComponent";
 import TabsControlComponent from "./TabsControlComponent";
 
 //import "./../img-2.js";
-
-// import { NavigationDrawer, Button, SVGIcon, FontIcon } from "react-md";
 
 class PhotosComponent extends Component {
   //  {JSON.stringify(this.props.match.params)} => { question: 1}  .
@@ -56,25 +53,7 @@ class PhotosComponent extends Component {
           selected={this.state.selected}
           selectPad={pad => this.handleCrashpadSelect(pad)}
         />
-        <PhotoGridComponent
-          images={["assets/dsf/pool400.jpg", "assets/dsf/clubhouse400.jpg"]}
-          handleImageSelect={img => this.handleImageSelect(img)}
-        />
-        <DialogContainer
-          id="simple-list-dialog"
-          visible={false}
-          onHide={this.hide.bind(this)}
-          initialFocus="full_img"
-          aria-label="full resolution"
-          autopadContent={false}
-          width="80%"
-        >
-          <img
-            src={this.state.image.url}
-            alt="full screen view"
-            id="full_img"
-          />
-        </DialogContainer>
+        <PhotoGridComponent />
       </div>
     );
   }

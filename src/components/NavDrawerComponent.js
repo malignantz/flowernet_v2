@@ -1,9 +1,6 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { NavigationDrawer, Button, SVGIcon, FontIcon } from "react-md";
-
+import NavigationDrawer from "react-md/lib/NavigationDrawers/NavigationDrawer";
 import NavLink from "./NavLink";
-
 import navItems from "./../navItems";
 
 class NavDrawerComponent extends Component {

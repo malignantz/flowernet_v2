@@ -1,0 +1,94 @@
+.paper_content {
+  color: rgb(230, 230, 230);
+  text-align: center;
+  /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;*/
+}
+
+.bg_holder {
+  /*
+  background: linear-gradient(0deg, url("/assets/splash.jpg")
+  */
+  max-width: 768px;
+
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 20%,
+      rgba(0, 0, 0, 1)
+    ),
+    url(/assets/splash.jpg);
+
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+  opacity: 0.8;
+
+  z-index: 0; /* To make sur it's below the rest */
+}
+
+.alignRight {
+  color: rgb(15, 106, 15);
+  text-align: right;
+}
+
+.alignLeft {
+  color: blue;
+  text-align: left;
+}
+.left_title {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  /* text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;*/
+}
+.right_title {
+  font-size: 1.1em;
+  font-weight: bold;
+  text-align: center;
+
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  /* text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;*/
+}
+
+.type_line {
+  padding: 10px;
+  text-align: left;
+  color: rgb(228, 228, 228);
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.spl_icon {
+  color: black;
+}
+
+.overlay_text {
+  font-weight: inherit;
+  font-size: 1.2em;
+  margin: 5px;
+  padding: 10px;
+}
+
+.white_box {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.padder {
+  height: 10px;
+}
+
+.blue_box {
+  background: blue;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+}
+
+.blue_box button {
+  color: white;
+  font-weight: bold;
+}

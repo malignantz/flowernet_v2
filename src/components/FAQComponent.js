@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import { Grid, Cell } from "react-md";
-
-// import { NavigationDrawer, Button, SVGIcon, FontIcon } from "react-md";
+import Grid from "react-md/lib/Grids/Grid";
+import Cell from "react-md/lib/Grids/Cell";
 
 class FAQComponent extends Component {
   //  {JSON.stringify(this.props.match.params)} => { question: 1}

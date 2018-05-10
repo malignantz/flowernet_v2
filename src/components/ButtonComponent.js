@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button } from "react-md";
+import Button from "react-md/lib/Buttons/Button";
 
 class ButtonComponent extends Component {
   constructor(props) {
