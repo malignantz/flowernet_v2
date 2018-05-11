@@ -74,7 +74,7 @@
 .white_box {
   background: rgba(255, 255, 255, 0.85);
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 0px;
 }
 
 .padder {

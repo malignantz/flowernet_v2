@@ -1,0 +1,17 @@
+.container {
+  height: initial !important;
+}
+
+.mdexp {
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+}
+
+ul li.md-paper {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.ac_padding {
+  height: 120px;
+}

@@ -81,10 +81,10 @@ class HomeComponent extends Component {
                 <div className="right_title">coldbedSFO.com</div>
                 <hr />
                 <div className="overlay_text alignLeft">
-                  <span className="white_box" zIndex="-1">
+                  <div className="white_box">
                     <FontIcon className="spl_icon">face</FontIcon> Cleaning
                     Service
-                  </span>
+                  </div>
                 </div>
                 <div className="alignRight overlay_text">
                   <span className="white_box" zIndex="-1">

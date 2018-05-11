@@ -355,22 +355,24 @@ class AgreementComponent extends Component {
             <label htmlFor="checkbox">
               <strong>Select to proceed:</strong>
             </label>
-            <SelectionControl
-              id="checkbox"
-              name="simple-checkboxes[]"
-              label="I read and understood this agreement."
-              type="checkbox"
-              value="YES"
-              onChange={() => this.handleCheck("tldr")}
-              checked={this.state.tldr}
-            />
+            <div className="highlight_text">
+              <SelectionControl
+                id="checkbox"
+                name="simple-checkboxes[]"
+                label="I read and understood this agreement."
+                type="checkbox"
+                value="YES"
+                onChange={() => this.handleCheck("tldr")}
+                checked={this.state.tldr}
+              />
+            </div>
             <Divider className="divider" />
             {Object.keys(this.state).every(prop => this.state[prop]) ? (
               <ButtonComponent buttonRef={this.button} />
             ) : (
               <div>
-                <div className="highlight_text">
-                  <span>{this.state.instructions}</span>
+                <div>
+                  <div className="underline">{this.state.instructions}</div>
                   <div className="dangerText">{this.state.dangerText}</div>
                   {this.state.instructions.includes("acknowledge") ? (
                     <div

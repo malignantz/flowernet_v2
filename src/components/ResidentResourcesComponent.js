@@ -53,6 +53,19 @@ class ResidentResourcesComponent extends Component {
             </Cell>
             <Cell size={cellSize}>
               <ListItem
+                primaryText="UA HOLIDAY PAY"
+                secondaryText="Calculate bonus for trip"
+                onClick={() =>
+                  window.open(
+                    "http://crashpad.co/UnitedHolidayPay/?coldbedsfo",
+                    "_self"
+                  )
+                }
+                style={{ border: "1px solid black" }}
+              />
+            </Cell>
+            <Cell size={cellSize}>
+              <ListItem
                 primaryText="MORE COMING SOON"
                 secondaryText="We <3 suggestions!"
                 style={{ border: "1px solid black" }}
