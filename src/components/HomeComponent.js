@@ -87,36 +87,36 @@ class HomeComponent extends Component {
                   </div>
                 </div>
                 <div className="alignRight overlay_text">
-                  <span className="white_box" zIndex="-1">
-                    <FontIcon class="spl_icon">fitness_center</FontIcon> Fitness
-                    center
+                  <span className="white_box">
+                    <FontIcon className="spl_icon">fitness_center</FontIcon>{" "}
+                    Fitness center
                   </span>
                 </div>
                 <div className="alignLeft overlay_text">
-                  <span className="white_box" zIndex="-1">
+                  <span className="white_box">
                     <FontIcon className="spl_icon">airport_shuttle</FontIcon>{" "}
                     SFO shuttles
                   </span>
                 </div>
                 <div className="overlay_text alignRight">
-                  <span className="white_box" zIndex="-1">
+                  <span className="white_box">
                     <FontIcon className="spl_icon">flight_takeoff</FontIcon> 8 m
                     to airport
                   </span>
                 </div>
                 <div className="overlay_text alignLeft">
-                  <span className="white_box" zIndex="-1">
+                  <span className="white_box">
                     <FontIcon className="spl_icon">tv</FontIcon> 55" 4K Smart TV
                   </span>
                 </div>
                 <div className="overlay_text alignRight">
-                  <span className="white_box" zIndex="-1">
+                  <span className="white_box">
                     <FontIcon className="spl_icon">local_pizza</FontIcon> Nearby
                     Restaurants
                   </span>
                 </div>
                 <div className="overlay_text alignLeft">
-                  <span className="white_box" zIndex="-1">
+                  <span className="white_box">
                     <FontIcon className="spl_icon">pool</FontIcon> Pools / Hot
                     Tub
                   </span>

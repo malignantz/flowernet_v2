@@ -15,3 +15,9 @@ ul li.md-paper {
 .ac_padding {
   height: 120px;
 }
+
+.answer_section {
+  background-color: rgb(254, 233, 181);
+  padding: 8px;
+  border-radius: 5px;
+}

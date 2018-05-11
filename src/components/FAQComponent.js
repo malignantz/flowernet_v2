@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import "./FAQComponent.css";
-import questions from "./../lib/faq_data";
+import questions from "./../lib/data.js";
 import Fuse from "fuse.js";
+import ReactMarkdown from "react-markdown";
 
 import Grid from "react-md/lib/Grids/Grid";
 import Cell from "react-md/lib/Grids/Cell";
@@ -13,6 +14,8 @@ import ExpansionList from "react-md/lib/ExpansionPanels/ExpansionList";
 import ExpansionPanel from "react-md/lib/ExpansionPanels/ExpansionPanel";
 import FontIcon from "react-md/lib/FontIcons/FontIcon";
 import Card from "react-md/lib/Cards/Card";
+import TextField from "react-md/lib/TextFields/TextField";
+import Divider from "react-md/lib/Dividers/Divider";
 
 class FAQComponent extends Component {
   //  {JSON.stringify(this.props.match.params)} => { question: 1}
@@ -21,14 +24,19 @@ class FAQComponent extends Component {
     this.data = questions;
     this.indexer = new Fuse(this.data, {
       keys: [
-        { name: "question", weight: 1 }
-        //{ name: "answer", weight: 0.5 }
+        { name: "question", weight: 0.5 },
+        { name: "answer", weight: 0.5 }
       ],
-      threshold: 0.4,
+      threshold: 0.6,
       includeScore: true,
       distance: 200,
       tokenize: true
     });
+    console.log(this.data);
+    this.state = {
+      query: ""
+    };
+
     // console.log(this.indexer);
   }
 
@@ -41,16 +49,16 @@ class FAQComponent extends Component {
       .slice(0)
       .filter(this.filterByScore.bind(this, filterText))
       .map(item => item.item)
-      .slice(0, 2);
+      .slice(0, 6);
   }
 
   filterByScore(filterText, queryReturn, i, a) {
     // { item: {}, score: {}}
 
     //if (filterText === "trash") {
-    console.log("Search: ", filterText);
-    console.log("Score: ", queryReturn.score);
-    console.log(JSON.stringify(queryReturn.item));
+    // console.log("Search: ", filterText);
+    // console.log("Score: ", queryReturn.score);
+    // console.log(JSON.stringify(queryReturn.item));
     //    }
     let firstScore = a[0].score;
     let currScore = queryReturn.score;
@@ -63,40 +71,30 @@ class FAQComponent extends Component {
 
   render() {
     //console.log(this.state.data, this.filterWithFuseJS);
+
     return (
       <div>
-        <TabsContainer panelClassName="md-grid" colored>
-          <Tabs tabId="simple-tab" mobile={false} className="container">
-            <Tab icon={<FontIcon>question_answer</FontIcon>}>
-              <ExpansionList className="md-cell md-cell--12">
-                {this.data.map(qa => (
-                  <ExpansionPanel
-                    className="mdexp"
-                    label={qa.question}
-                    footer={null}
-                  >
-                    <p>{qa.answer}</p>
-                  </ExpansionPanel>
-                ))}
-              </ExpansionList>
-            </Tab>
-            <Tab icon={<FontIcon>search</FontIcon>}>
-              <h3>Questions or keywords...</h3>
-              <Autocomplete
-                deleteKeys="score"
-                id="FAQ_questions"
-                tabIndex={0}
-                placeholder="Search"
-                data={this.data}
-                filter={this.filterWithFuseJS.bind(this)}
-                dataLabel="question"
-              />
-              <div className="ac_padding" style={{ visibility: "hidden" }}>
-                stuf
-              </div>
-            </Tab>
-          </Tabs>
-        </TabsContainer>
+        <h3>Fervently Anticipated Queries</h3>
+        <TextField
+          id="floating-center-title"
+          label="Search"
+          lineDirection="center"
+          placeholder="Where is the tarsh shoot?"
+          className="md-cell md-cell--bottom"
+          onChange={query => this.setState({ query })}
+        />
+        <ExpansionList className="md-cell md-cell--12">
+          {(this.state.query
+            ? this.filterWithFuseJS(this.data, this.state.query, "label")
+            : this.data
+          ).map(qa => (
+            <ExpansionPanel label={qa.question} footer={null} key={qa.question}>
+              <Divider style={{ marginBottom: "10px" }} />
+
+              <ReactMarkdown className="answer_section" source={qa.answer} />
+            </ExpansionPanel>
+          ))}
+        </ExpansionList>
       </div>
     );
   }

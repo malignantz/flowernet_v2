@@ -71,7 +71,7 @@ class PhotoGridComponent extends Component {
     });
   }
   render() {
-    console.log(this.imgs);
+    //console.log(this.imgs);
     return (
       <div>
         <Gallery photos={this.imgs} onClick={this.openLightbox} />
