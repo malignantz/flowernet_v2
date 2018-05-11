@@ -77,54 +77,49 @@ class HomeComponent extends Component {
           <Cell size={12}>
             <Paper zDepth={3} className="bg_holder">
               <div className="paper_content">
-                <div className="left_title">Flowernet CrashPads</div>
-                <div className="right_title">coldbedSFO.com</div>
+                <div className="title">coldbedSFO.com</div>
                 <hr />
                 <div className="overlay_text alignLeft">
                   <div className="white_box">
-                    <FontIcon className="spl_icon">face</FontIcon> Cleaning
-                    Service
+                    <FontIcon forceFontSize className="spl_icon">
+                      <span>spa</span>
+                    </FontIcon>
+                    Cleaning Service
                   </div>
                 </div>
                 <div className="alignRight overlay_text">
-                  <span className="white_box">
-                    <FontIcon className="spl_icon">fitness_center</FontIcon>{" "}
-                    Fitness center
-                  </span>
+                  <div className="white_box">
+                    <FontIcon forceFontSize className="spl_icon">
+                      fitness_center
+                    </FontIcon>
+                    <span className="iconLeft">Fitness center</span>
+                  </div>
                 </div>
                 <div className="alignLeft overlay_text">
-                  <span className="white_box">
-                    <FontIcon className="spl_icon">airport_shuttle</FontIcon>{" "}
-                    SFO shuttles
-                  </span>
-                </div>
-                <div className="overlay_text alignRight">
-                  <span className="white_box">
-                    <FontIcon className="spl_icon">flight_takeoff</FontIcon> 8 m
-                    to airport
-                  </span>
+                  <div className="white_box">
+                    <FontIcon className="spl_icon">airport_shuttle</FontIcon>
+                    <span className="iconLeft">SFO Shuttle</span>
+                  </div>
                 </div>
                 <div className="overlay_text alignLeft">
-                  <span className="white_box">
-                    <FontIcon className="spl_icon">tv</FontIcon> 55" 4K Smart TV
-                  </span>
+                  <div className="white_box">
+                    <FontIcon className="spl_icon">tv</FontIcon>
+                    <span className="iconLeft">55" 4K Smart TV</span>
+                  </div>
                 </div>
-                <div className="overlay_text alignRight">
-                  <span className="white_box">
-                    <FontIcon className="spl_icon">local_pizza</FontIcon> Nearby
-                    Restaurants
-                  </span>
-                </div>
+
                 <div className="overlay_text alignLeft">
-                  <span className="white_box">
-                    <FontIcon className="spl_icon">pool</FontIcon> Pools / Hot
-                    Tub
-                  </span>
+                  <div className="white_box">
+                    <FontIcon className="spl_icon">pool</FontIcon>
+                    <span className="iconLeft">Pools / Hot Tub</span>
+                  </div>
                 </div>
                 <div className="overlay_text alignRight">
-                  <Button iconClassName="arrow_forward" raised primary>
-                    Learn More ->
-                  </Button>
+                  <div className="learn_more">
+                    <Button raised primary>
+                      Learn More
+                    </Button>
+                  </div>
                 </div>
                 <div className="padder" />
               </div>

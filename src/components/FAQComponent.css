@@ -17,7 +17,14 @@ ul li.md-paper {
 }
 
 .answer_section {
-  background-color: rgb(254, 233, 181);
+  background-color: rgb(241, 250, 255);
+  font-weight: bold;
+  font-size: 1.2em;
   padding: 8px;
   border-radius: 5px;
+}
+
+.boldandbig p {
+  font-weight: bold;
+  font-size: 0.9em;
 }

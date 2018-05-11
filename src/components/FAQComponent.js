@@ -56,12 +56,13 @@ class FAQComponent extends Component {
     // { item: {}, score: {}}
 
     //if (filterText === "trash") {
-    // console.log("Search: ", filterText);
-    // console.log("Score: ", queryReturn.score);
-    // console.log(JSON.stringify(queryReturn.item));
+    console.log("Search: ", filterText);
+    console.log("Score: ", queryReturn.score);
+    console.log(JSON.stringify(queryReturn.item));
     //    }
     let firstScore = a[0].score;
     let currScore = queryReturn.score;
+    return true;
     if ((currScore - firstScore) / firstScore * 100 < 4) {
       return true;
     }
@@ -79,7 +80,7 @@ class FAQComponent extends Component {
           id="floating-center-title"
           label="Search"
           lineDirection="center"
-          placeholder="Where is the tarsh shoot?"
+          placeholder="Is there a fitness center?"
           className="md-cell md-cell--bottom"
           onChange={query => this.setState({ query })}
         />
@@ -88,10 +89,15 @@ class FAQComponent extends Component {
             ? this.filterWithFuseJS(this.data, this.state.query, "label")
             : this.data
           ).map(qa => (
-            <ExpansionPanel label={qa.question} footer={null} key={qa.question}>
+            <ExpansionPanel
+              label={qa.question}
+              footer={null}
+              key={qa.question}
+              className="answer_section"
+            >
               <Divider style={{ marginBottom: "10px" }} />
 
-              <ReactMarkdown className="answer_section" source={qa.answer} />
+              <ReactMarkdown className="boldandbig" source={qa.answer} />
             </ExpansionPanel>
           ))}
         </ExpansionList>
