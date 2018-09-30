@@ -1,40 +1,10 @@
 const { execFile } = require("child_process");
 const mozjpeg = require("mozjpeg");
 
-let photos = {
-  ALL: [
-    "gym1",
-    "gym2",
-    "gym3",
-    "underbedbin",
-    "kitchen1",
-    "kitchen2",
-    "oats",
-    "rice",
-    "ricemaker",
-    "steamer"
-  ],
-  ST: [
-    "livingroom1",
-    // "livingroom2", its a fucking png
-    "livingroom3",
-    "kitchen1",
-    "diningnook1",
-    "diningnook2",
-    "dishwasher",
-    "entry",
-    "coffee1",
-    "coffee2",
-    // "foodbins1", its a fucking png
-    "bathroom1"
-  ],
-  DSF: [],
-  WF: [],
-  PL: []
-};
+let photos = require("./photoList").photosList;
 
 let pads = Object.keys(photos);
-let base = "../public/assets/";
+let base = "../../public/assets/";
 
 //console.log(pads);
 
@@ -45,7 +15,7 @@ let fileList = pads.reduce((result, pad) => {
     })
   );
 }, []);
-
+/*
 fileList = fileList.concat(
   pads.reduce((result, pad) => {
     return result.concat(
@@ -55,11 +25,12 @@ fileList = fileList.concat(
     );
   }, [])
 );
+*/
 
-console.log(fileList);
+//console.log(fileList);
 
 let fileList1 = fileList.slice(0);
-let quality = 80;
+let quality = 90;
 
 Promise.all(
   fileList1.map(

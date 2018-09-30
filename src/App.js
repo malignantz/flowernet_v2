@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 
-import HomeComponent from "./components/HomeComponent";
+import HomeComponent2 from "./components/HomeComponent2";
 import NavDrawerComponent from "./components/NavDrawerComponent";
 import PhotosComponent from "./components/PhotosComponent";
 import AgreementComponent from "./components/AgreementComponent";
 import FAQComponent from "./components/FAQComponent";
 import ResidentResourcesComponent from "./components/ResidentResourcesComponent";
+import AmenitiesComponent from "./components/AmenitiesComponent";
 
 import "./App.css";
 
@@ -22,7 +23,7 @@ class App extends Component {
                   exact
                   path="/"
                   location={location}
-                  component={HomeComponent}
+                  component={HomeComponent2}
                 />
                 <Route
                   path="/FAQ/:question?"
@@ -43,6 +44,11 @@ class App extends Component {
                   path="/Agreement"
                   location={location}
                   component={AgreementComponent}
+                />
+                <Route
+                  path="/Amenities"
+                  location={location}
+                  component={AmenitiesComponent}
                 />
               </Switch>
             </NavDrawerComponent>

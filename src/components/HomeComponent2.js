@@ -11,7 +11,7 @@ import arrow_forward from "./../baseline-arrow_forward-24px.svg";
 
 import "./HomeComponent.css";
 
-class HomeComponent extends Component {
+class HomeComponent2 extends Component {
   /*
   constructor() {
     super();
@@ -72,59 +72,15 @@ class HomeComponent extends Component {
   */
   render() {
     return (
-      <div className="paper_content">
-        <Paper zDepth={3} className="bg_holder">
-          <div>
-            <div className="title">coldbedSFO.com</div>
-            <hr />
-            <div className="overlay_text alignLeft">
-              <div className="white_box">
-                <FontIcon forceFontSize className="spl_icon">
-                  spa
-                </FontIcon>
-                <span className="iconLeft">Cleaning Service</span>
-              </div>
-            </div>
-            <div className="alignLeft overlay_text">
-              <div className="white_box">
-                <FontIcon forceFontSize className="spl_icon">
-                  fitness_center
-                </FontIcon>
-                <span className="iconLeft">Fitness center</span>
-              </div>
-            </div>
-            <div className="alignLeft overlay_text">
-              <div className="white_box">
-                <FontIcon className="spl_icon">airport_shuttle</FontIcon>
-                <span className="iconLeft">SFO Shuttle</span>
-              </div>
-            </div>
-            <div className="overlay_text alignLeft">
-              <div className="white_box">
-                <FontIcon className="spl_icon">tv</FontIcon>
-                <span className="iconLeft">55" 4K Smart TV</span>
-              </div>
-            </div>
-
-            <div className="overlay_text alignLeft">
-              <div className="white_box">
-                <FontIcon className="spl_icon">pool</FontIcon>
-                <span className="iconLeft">Pools / Hot Tub</span>
-              </div>
-            </div>
-            <div className="overlay_text alignLeft">
-              <div className="learn_more">
-                <Button raised secondary>
-                  Learn More
-                </Button>
-              </div>
-            </div>
-            <div className="padder" />
-          </div>
-        </Paper>
-      </div>
+      <div
+        style={{
+          backgroundImage: 'url("pool.png")',
+          width: "358px",
+          height: "573px"
+        }}
+      />
     );
   }
 }
 
-export default HomeComponent;
+export default HomeComponent2;

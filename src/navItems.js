@@ -7,8 +7,14 @@ export default [
     primaryText: "home"
   },
   {
+    label: "Amenities",
+    to: "/Amenities",
+    icon: "hotel",
+    primaryText: "<p>Amenities</p>"
+  },
+  {
     label: "Photos",
-    to: "/photos",
+    to: "/Photos",
     icon: "photo",
     primaryText: "photos"
   },

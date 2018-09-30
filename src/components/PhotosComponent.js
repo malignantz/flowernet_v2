@@ -47,13 +47,13 @@ class PhotosComponent extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{ maxWidth: "750px" }}>
         <TabsControlComponent
           crashpads={this.state.crashpads}
           selected={this.state.selected}
           selectPad={pad => this.handleCrashpadSelect(pad)}
         />
-        <PhotoGridComponent />
+        <PhotoGridComponent pad={this.state.selected} />
       </div>
     );
   }

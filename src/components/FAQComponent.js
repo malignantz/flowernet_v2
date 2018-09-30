@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+  import React, { Component } from "react";
 import "./FAQComponent.css";
 import questions from "./../lib/data.js";
 import Fuse from "fuse.js";
@@ -24,8 +24,9 @@ class FAQComponent extends Component {
     this.data = questions;
     this.indexer = new Fuse(this.data, {
       keys: [
-        { name: "question", weight: 0.5 },
-        { name: "answer", weight: 0.5 }
+        { name: "question", weight: 0.3 },
+        { name: "answer", weight: 0.3 },
+        { name: "tags", weight: 0.4 }
       ],
       threshold: 0.6,
       includeScore: true,
@@ -71,36 +72,40 @@ class FAQComponent extends Component {
   }
 
   render() {
-    //console.log(this.state.data, this.filterWithFuseJS);
+    let data = this.state.query
+      ? this.filterWithFuseJS(this.data, this.state.query, "label")
+      : this.data;
 
+    let cats = Object.keys(data[0]).map(cat =>
+      data.filter(obj => obj.cat === cat)
+    );
     return (
       <div>
         <h3>Fervently Anticipated Queries</h3>
         <TextField
           id="floating-center-title"
+          icon={<FontIcon>search</FontIcon>}
           label="Search"
           lineDirection="center"
           placeholder="Is there a fitness center?"
           className="md-cell md-cell--bottom"
           onChange={query => this.setState({ query })}
         />
-        <ExpansionList className="md-cell md-cell--12">
-          {(this.state.query
-            ? this.filterWithFuseJS(this.data, this.state.query, "label")
-            : this.data
-          ).map(qa => (
+
+        {data.map((qa, i, a) => (
+          <ExpansionList className="md-cell md-cell--12">
             <ExpansionPanel
               label={qa.question}
               footer={null}
               key={qa.question}
               className="answer_section"
             >
-              <Divider style={{ marginBottom: "10px" }} />
+              <Divider style={{ marginBottom: "15px" }} />
 
               <ReactMarkdown className="boldandbig" source={qa.answer} />
             </ExpansionPanel>
-          ))}
-        </ExpansionList>
+          </ExpansionList>
+        ))}
       </div>
     );
   }

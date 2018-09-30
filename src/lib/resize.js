@@ -1,5 +1,6 @@
 const { execFile } = require("child_process");
 
+/*
 let photos = {
   ALL: [
     "gym1",
@@ -31,9 +32,11 @@ let photos = {
   WF: [],
   PL: []
 };
+*/
+let photos = require("./photoList").photosList;
 
 let pads = Object.keys(photos);
-let base = "../public/assets/";
+let base = "./../public/assets/";
 
 //console.log(pads);
 
@@ -53,7 +56,7 @@ if (process.argv[2] === "blur") {
   size = "-s 20x30";
   prefix = "-p blur_";
 } else {
-  size = "-s 400x500>";
+  size = "-s 400x600>";
   prefix = "-p web_";
 }
 
@@ -63,7 +66,7 @@ Promise.all(
       new Promise((res, rej) => {
         execFile(
           "image-batch-resizer",
-          ["-d", "./../public/assets", size, prefix],
+          ["-d", "./../../public/assets", size, prefix],
           err => {
             if (err) {
               console.log("error", file);

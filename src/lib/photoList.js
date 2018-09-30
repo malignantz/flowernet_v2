@@ -1,0 +1,86 @@
+exports.photosList = {
+  ALL: [
+    "steamer",
+    "gym1",
+    "gym2",
+    "gym3",
+    "gym4",
+    "pool",
+    "courtyard1",
+    "courtyard2",
+    "oats",
+    "rice",
+    "ricemaker",
+    "coffee1",
+    "coffee2"
+  ],
+  ST: [
+    "livingroom1",
+    "livingroom2", //its a fucking png
+    "livingroom3",
+    "kitchen1",
+    "kitchen2",
+    "kitchen3",
+    "foodbins1",
+    "diningnook1",
+    "diningnook2",
+    "dishwasher",
+    "entry",
+    "bathroom1"
+  ],
+  DSF: [
+    "livingroom1",
+    "livingroom2",
+    "tv",
+    "nook",
+    "kitchen1",
+    "kitchen2",
+    "refrigerator",
+    "balcony",
+    "den",
+    "dresser",
+    "wardrobe",
+    "beds1",
+    "beds2",
+    "bigroom",
+    "bathroom"
+  ],
+  WF: [
+    "livingroom1",
+    "livingroom2",
+    "livingroom3",
+    "tv1",
+    "tv2",
+    "entry1",
+    "entry2",
+    "food1",
+    "nook",
+    "mattress",
+    "hallway"
+  ],
+  PL: [
+    "livingroom1",
+    "livingroom2",
+    "livingroom3",
+    "livingroom4",
+    "tv",
+    "tv2",
+    "entry1",
+    "entry2",
+    "kitchen1",
+    "foodbins1",
+    "hallway1",
+    "toiletrybins"
+  ],
+  ZO: [
+    "livingroom1",
+    "livingroom2",
+    "livingroom3",
+    "kitchen",
+    "nook",
+    "hallway",
+    "entry",
+    "smallbedroom",
+    "largebedroom"
+  ]
+};

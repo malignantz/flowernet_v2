@@ -1,0 +1,20 @@
+.amenities_content {
+  width: 90%;
+}
+
+.important_section {
+  background-color: yellow;
+}
+
+.section_title {
+  background-color: lightgoldenrodyellow;
+  border: 1px solid rgb(203, 203, 203);
+}
+
+.margin-card {
+  margin-top: 15px;
+}
+
+.underline {
+  text-decoration: underline;
+}

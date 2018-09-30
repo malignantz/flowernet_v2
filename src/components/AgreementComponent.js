@@ -124,7 +124,7 @@ class AgreementComponent extends Component {
             <SelectionControl
               id="deposit_checkbox"
               name="acknowledge[]"
-              label="I acknowledge that my security deposit cannot be applied to rent nor returned if you do not move in."
+              label="I acknowledge that my security deposit cannot be applied to rent nor returned if I do not move in."
               type="checkbox"
               value="YES"
               className="highlight_text"
@@ -158,6 +158,18 @@ class AgreementComponent extends Component {
               physical key or code. Violation of this policy will jeopardize
               your residency.
             </p>
+            <Divider className="divider" />
+            <SelectionControl
+              id="keys_chk"
+              name="acknowledge[]"
+              label="I will not share key or door code with anyone."
+              type="checkbox"
+              value="YES"
+              className="highlight_text"
+              tabIndex={0}
+              onChange={() => this.handleCheck("deposit")}
+              checked={this.state.deposit}
+            />
           </CardText>
         </Card>
         <Card className="md-block-centered margin-card" raise>
@@ -194,8 +206,8 @@ class AgreementComponent extends Component {
           <CardText>
             <p>
               There are two designated shelves for luggage. These are a first
-              come, first serve. Please put purses and totes on higher shelves
-              if possible.
+              come, first serve. Please put lighter purses and totes on higher
+              shelves if possible.
             </p>
           </CardText>
         </Card>
@@ -250,7 +262,7 @@ class AgreementComponent extends Component {
               though we have a cleaning service remove the trash twice per week,
               sometimes it will fill up and we appreicate you taking it out on
               occasion (there’s a trash chute located at the end of the hall on
-              the staircase - between floors or ground level).{" "}
+              the staircase - between floors or ground level).
               <em>Think crashpad, not trashpad.</em>
             </p>
           </CardText>
